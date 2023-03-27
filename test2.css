@@ -1,0 +1,28 @@
+button {
+  size: 2500px;
+  border-radius: 50%;
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(140, 210, 140);
+  padding: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 200px;
+  margin: center;
+  width: 50%;
+  border: 3px solid rgb(80, 4, 160);
+  padding: 60px;
+
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
