@@ -1,28 +1,25 @@
-button {
-  size: 2500px;
-  border-radius: 50%;
-  margin: auto;
-  width: 50%;
-  border: 3px solid rgb(140, 210, 140);
-  padding: 50px;
+.hs {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.time {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
-p {
-  font-size: 20px;
+.choices button {
+  display:block;
+}
+.quiz-wrapper {
+  margin: 120px auto 0 auto;
+  max-width:550px;
+}
+.start-page-div {
+  text-align: center; 
 }
 
-h2 {
-  font-size: 200px;
-  margin: center;
-  width: 50%;
-  border: 3px solid rgb(80, 4, 160);
-  padding: 60px;
-
-
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.3;
+.hide {
+  display:none;
 }
