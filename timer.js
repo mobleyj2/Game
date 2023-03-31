@@ -73,8 +73,18 @@ for (let i=0; i <currentQuestion.choices.length; i++){
   choiceBtnEl.setAttribute('value',  choice);
   choiceBtnEl.textContent = i + 1 + '. ' + choice;
   choicesEl.appendChild(choiceBtnEl);
- 
-
+  
 }
 
+choicesEl.addEventListener("click",clickHandler)
+function clickHandler(event){
+var target=event.target
+console.log(target)
+if (choicesEl = "A1")
+ alert("hey");
+}
+
+ //choicesEl.appendChild(choiceBtnEl);
+  //function selectedQ()
+ //choicesEl.onclick=selectedQuestion;
 }
