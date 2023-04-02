@@ -1,7 +1,7 @@
 let startBtnEl = document.getElementById("start-btn");
 startBtnEl.addEventListener("click", startTheQuiz);
 let startPageDivEl = document.getElementById("start-page-div");
-let timeLeft = 10;
+let timeLeft = 15;
 let timerId;
 let timeEl = document.getElementById("time");
 let questionsPageDivEl = document.getElementById("questions-page-div");
@@ -33,7 +33,7 @@ let questions = [
   },
   {
     question: "Game Over",
-    corrAns: "D5"
+
 
   },
 ];
@@ -64,11 +64,14 @@ function OneSecTimerFunc() {
     if (timeLeft === 0)
       clearInterval(textContent);
     timeEl.textContent = "--GAME OVER!!--";
-    prompt("Enter Your Name ")
-/////////JSON
-
-
+    if (prompt != null) {
+      let person = prompt("Please enter your name", "Harry Potter");
+      document.getElementById("demo","hs").outerHTML =
+      (prompt) + person + "Good Job!!";
+    }
   }
+  /////////JSON
+
 }
 
 function showQuestion() {
@@ -150,8 +153,7 @@ function showQuestion() {
 
         }
 
-        //else {
-        //alert("incorrect")
+
 
       }
     }
@@ -179,12 +181,10 @@ choicesEl.addEventListener("click",
         choiceBtnEl.setAttribute('value', choice);
         choiceBtnEl.textContent = i + 1 + '. ' + choice;
         choicesEl.appendChild(choiceBtnEl);
-        //if (questions == [Q1] + 1) ;
-        // questions.showQuestion ="Q2"
+
       }
 
-      //else {
-      //alert("incorrect")
+
 
     }
   }
@@ -195,8 +195,10 @@ choicesEl.addEventListener("click",
 choicesEl.addEventListener("click",
   function clickHandler(event) {
     var target = event.target.value
+    var score = questions.corrAns
     /////////////////
     if (target == ("JavaScript"))
+
       currentQuestion = questions[index + 4];
     let questionEl = document.getElementById("question");
 
@@ -221,3 +223,4 @@ choicesEl.addEventListener("click",
     }
   }
 )
+
