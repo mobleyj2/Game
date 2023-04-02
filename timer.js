@@ -5,6 +5,7 @@ let timeLeft = 20;
 let timerId;
 let timeEl = document.getElementById("time");
 let questionsPageDivEl =  document.getElementById("questions-page-div");
+let Cor1 = document.createElement('Cor1');
 
 let questions = [
   { question: "Q1",
@@ -75,16 +76,18 @@ for (let i=0; i <currentQuestion.choices.length; i++){
   choicesEl.appendChild(choiceBtnEl);
   
 }
+//string.includes(searchvalue, start)
+
 
 choicesEl.addEventListener("click",clickHandler)
 function clickHandler(event){
 var target=event.target
 console.log(target)
-if (choicesEl = "A1")
- alert("hey");
+
+if (buttonEL.target = ("A1"))  alert("yes2")
+if (choicesEl.corrAns = [1]) alert ("yes111111112")
+
 }
 
- //choicesEl.appendChild(choiceBtnEl);
-  //function selectedQ()
- //choicesEl.onclick=selectedQuestion;
+
 }
