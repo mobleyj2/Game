@@ -23,3 +23,8 @@
 .hide {
   display:none;
 }
+.HS1{
+  position: bottom;
+  bottom: 12px;
+  right: 12px;
+}
