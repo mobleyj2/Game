@@ -1,7 +1,7 @@
 let startBtnEl = document.getElementById("start-btn");
 startBtnEl.addEventListener("click", startTheQuiz);
 let startPageDivEl = document.getElementById("start-page-div");
-let timeLeft = 15;
+let timeLeft = 75;
 let timerId;
 let timeEl = document.getElementById("time");
 let questionsPageDivEl = document.getElementById("questions-page-div");
@@ -13,18 +13,18 @@ let questions = [
   {
     question: "What is a html element?",
     choices: ["Dog", "Cat", "Toaster", "Body"],
-    corrAns: "C1"
+    corrAns: "Body"
   },
   {
     question: "What does CSS Stand for?",
     choices: ["CatSipsSunny D", "Cascading style Sheet",
       "Calling Snipers Sister", "Computer Style Sheet"],
-    corrAns: "C2"
+    corrAns: "Cascading style Sheet "
   },
   {
     question: "What does a CSS do?",
     choices: ["Makes thing Shiny", "Glitter", "Layout colors and fonts", "Lines"],
-    corrAns: "B3"
+    corrAns: "Layout colors and fonts"
   },
   {
     question: "What does js Stand for?",
@@ -59,9 +59,9 @@ function startTheQuiz() {
 function OneSecTimerFunc() {
   timeLeft -= 1;  // timeLeft--;
   timeEl.textContent = timeLeft;
-  if (timeLeft === 0) {
+  if (timeLeft < 0) {
     textContent = "1"
-    if (timeLeft === 0)
+    if (timeLeft < 0)
       clearInterval(textContent);
     timeEl.textContent = "--GAME OVER!!--";
     if (prompt != null) {
@@ -100,14 +100,9 @@ function showQuestion() {
 
   choicesEl.addEventListener("click", clickHandler)
   function clickHandler(event) {
-    var target = event.target
-    console.log(target)
-
-    choicesEl.addEventListener("click",
-      function clickHandler(event) {
         var target = event.target.value
         /////////////////
-        if (target == ("Body")) {
+        //if (target == ("Body")) {
           currentQuestion = questions[index + 1];
           let questionEl = document.getElementById("question");
 
@@ -123,49 +118,48 @@ function showQuestion() {
             choiceBtnEl.setAttribute('value', choice);
             choiceBtnEl.textContent = i + 1 + '. ' + choice;
             choicesEl.appendChild(choiceBtnEl);
+          if (target === ("Body"))
+          currentQuestion = questions[index + 1];
+          else
+           OneSecTimerFunc()
+           time = time = -10 
+        console.log(timeLeft)
+           
           }
-
-        }
-      }
-    )
-  }
-
-  choicesEl.addEventListener("click",
+        
+      choicesEl.addEventListener("click", clickHandler)
     function clickHandler(event) {
       var target = event.target.value
       /////////////////
-      if (target == ("Cascading style Sheet")) {
+      //if (target == ("Cascading style Sheet")) {
         currentQuestion = questions[index + 2];
         let questionEl = document.getElementById("question");
-
         questionEl.textContent = currentQuestion.question;
-
         choicesEl.innerHTML = "";
-
         for (let i = 0; i < currentQuestion.choices.length; i++) {
-
           let choice = currentQuestion.choices[i];
           let choiceBtnEl = document.createElement('button');
           choiceBtnEl.setAttribute('class', 'choice');
           choiceBtnEl.setAttribute('value', choice);
           choiceBtnEl.textContent = i + 1 + '. ' + choice;
           choicesEl.appendChild(choiceBtnEl);
-
+          if (target === ("Cascading style Sheet"))
+          currentQuestion = questions[index + 2];
+          else
+          OneSecTimerFunc()
+          time = time = -10 
+       console.log(timeLeft)
+           
+          }
         }
+        
+  
 
 
 
-      }
-    }
-  )
-}
-
-/////////////
-choicesEl.addEventListener("click",
-  function clickHandler(event) {
-    var target = event.target.value
-    /////////////////
-    if (target == ("Layout colors and fonts")) {
+choicesEl.addEventListener("click", clickHandler)
+function clickHandler(event) {
+  var target = event.target.value
       currentQuestion = questions[index + 3];
       let questionEl = document.getElementById("question");
 
@@ -181,14 +175,17 @@ choicesEl.addEventListener("click",
         choiceBtnEl.setAttribute('value', choice);
         choiceBtnEl.textContent = i + 1 + '. ' + choice;
         choicesEl.appendChild(choiceBtnEl);
-
+      if (target === ("Cascading style Sheet"))
+      currentQuestion = questions[index + 2];
+      else
+      OneSecTimerFunc()
+      time = time = -10 
+   console.log(timeLeft)
       }
 
 
 
     }
-  }
-)
 
 /////////////
 
@@ -205,6 +202,8 @@ choicesEl.addEventListener("click",
     questionEl.textContent = currentQuestion.question;
 
     choicesEl.innerHTML = "";
+   
+    
 
     for (let i = 0; i < currentQuestion.choices.length; i++) {
 
@@ -218,9 +217,8 @@ choicesEl.addEventListener("click",
 
       choicesEl.appendChild(choiceBtnEl);
       this.getElementsByClassName
-
+        
 
     }
   }
-)
-
+)}}
